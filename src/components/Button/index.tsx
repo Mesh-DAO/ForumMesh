@@ -28,7 +28,7 @@ export function Button({
       type={type}
       disabled={disable}
       className={classNames(
-        `rounded-md transition-all ease-in-out duration-300 no-underline ${width} h-[38px] `,
+        `rounded-md transition-all ease-in-out duration-300 no-underline ${width} h-[38px] flex justify-center items-center `,
         {
           "bg-[#F48023] hover:ring-1 hover:ring-[#b67643] text-white":
             color === "orange",

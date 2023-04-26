@@ -13,7 +13,7 @@ export function Title({
 }: Props){
     return(
         <h1 className={classNames(
-            `text-${size} text-${color} font-Roboto`,
+            `text-${size} text-${color} font-Roboto flex items-center gap-2`,
         )}>{children}</h1>
     )
 }
