@@ -12,8 +12,8 @@ export function Input({
     placeHolder
 }: Props){  
     return(
-        <input type="text" placeholder = {placeHolder} className={classNames(
-            `placeholder-[#808080] border-2 border-[#EAEAEA] rounded-md py-2 px-4 w-[380px] h-[42px] mt-2`,
+        <input type="text" placeholder={placeHolder} className={classNames(
+            `placeholder-[#808080] border-2 border-[#EAEAEA] rounded-md py-2 px-4 w-full h-[42px]`,
             className
         )}/>
     )

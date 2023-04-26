@@ -34,13 +34,11 @@ export function Button({
             color === "orange",
         },
         {
-          "bg-[#EAEAEA] hover:ring-1 hover:ring-[#474747]":
-            color === "white",
+          "bg-[#EAEAEA] hover:ring-1 hover:ring-[#474747]": color === "white",
         },
         className
       )}
     >
-      
       <Title>{children}</Title>
     </button>
   );

@@ -4,7 +4,7 @@ import { Title } from "../Title";
 
 export function Header() {
   return (
-    <div className="bg-white h-20 drop-shadow-sm shadow-md rounded-b-md flex items-center justify-between px-10">
+    <div className="bg-white absolute top-0 w-full h-20 drop-shadow-sm shadow-md rounded-b-md flex items-center justify-between px-10">
       <div className="flex items-center gap-2">
         <Logo />
         <Title>
