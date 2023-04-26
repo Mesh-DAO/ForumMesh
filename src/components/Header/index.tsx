@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "../Button";
 import { Logo, Userplus } from "../Icons";
 import { Title } from "../Title";
@@ -13,13 +14,17 @@ export function Header() {
       </div>
 
       <div className="flex items-center">
-        <Button color="orange">
-          <Userplus />
-          Register
-        </Button>
-        <Button color="white" width="w-[72px]" className="ml-4">
-          Login
-        </Button>
+        <Link href="/register">
+          <Button color="orange">
+            <Userplus />
+            Register
+          </Button>
+        </Link>
+        <Link href="/login">
+          <Button color="white" width="w-[72px]" className="ml-4">
+            Login
+          </Button>
+        </Link>
       </div>
     </div>
   );
