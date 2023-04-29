@@ -1,4 +1,5 @@
 import { Award } from "../Icons/Award";
+import { Facebook } from "../Icons/Facebook";
 import { Github } from "../Icons/Github";
 import { Heart } from "../Icons/Heart";
 import { HelpCircle } from "../Icons/HelpCircle";
@@ -15,24 +16,24 @@ export function SideBar() {
   return (
     <div className="fixed top-[130px] flex  flex-col justify-center w-[20%]">
       <div className="flex flex-col w-full gap-4">
-        <div className="flex items-center mb-5 pl-[5%]">
+        <div className="flex items-center mb-5 pl-[10%]">
             <Search/>
             <Input placeHolder="Search" borderColor="transparent"  className="ml-2 flex-grow"/>
         </div>
         
         <div className="flex flex-col gap-10 w-[60%]">
-            <div className="flex flex-col">
-                <Title size="sm" color="gray" className="pl-[10%] mb-[10px]">MENU</Title>
+            <div className="flex flex-col ">
+                <Title size="sm" color="gray" className="pl-[20%] mb-[10px]">MENU</Title>
                 <MenuItem><List/>Questions</MenuItem>
                 <MenuItem><Tag/>Tags</MenuItem>
                 <MenuItem><Award/>Ranking</MenuItem>
             </div>
             
             <div className="flex flex-col ">
-                <Title size="sm" color="gray" className="pl-[10%] mb-[10px]">PERSONAL NAVIGATOR</Title>
-                <MenuItem><HelpCircle/>Your questions</MenuItem>
-                <MenuItem><MessageCircle/>Your answers</MenuItem>
-                <MenuItem><Heart/>Your likes & Votes</MenuItem>
+                <Title size="sm" color="gray" className="pl-[20%] mb-[10px]">PERSONAL NAVIGATOR</Title>
+                <MenuItem><HelpCircle/>Questions</MenuItem>
+                <MenuItem><MessageCircle/>Answers</MenuItem>
+                <MenuItem><Heart/>Likes & Votes</MenuItem>
             </div>
         </div>
       </div>
@@ -40,6 +41,7 @@ export function SideBar() {
           <div className="flex flex-row gap-3 items-center justify-center">
             <Github />
             <Instagram />
+            <Facebook/>
           </div>
         </div>
     </div>
