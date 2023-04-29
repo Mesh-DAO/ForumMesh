@@ -42,6 +42,9 @@ export function Title({
         },
         {
           "text-gray-500": color === "gray"
+        },
+        {
+          "text-[#1682FD]": color === "blue"
         }
       )}
     >

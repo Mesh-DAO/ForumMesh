@@ -21,7 +21,7 @@ export function SideBar() {
             <Input placeHolder="Search" borderColor="transparent"  className="ml-2 flex-grow"/>
         </div>
         
-        <div className="flex flex-col gap-10 w-[60%]">
+        <div className="flex flex-col gap-6 w-[60%]">
             <div className="flex flex-col ">
                 <Title size="sm" color="gray" className="pl-[20%] mb-[10px]">MENU</Title>
                 <MenuItem><List/>Questions</MenuItem>
@@ -37,7 +37,7 @@ export function SideBar() {
             </div>
         </div>
       </div>
-        <div className="fixed bottom-10 flex items-center justify-center w-[20%]">
+        <div className="fixed bottom-[10px] flex items-center justify-center w-[20%]">
           <div className="flex flex-row gap-3 items-center justify-center">
             <Github />
             <Instagram />
