@@ -22,7 +22,7 @@ export function RegisterForm() {
         <Button color="blue" textColor="white" className="w-full">
           Register
         </Button>
-        <Link href="/login"><Button color="white" className="w-full">Login</Button></Link>
+        <Link href="/login"><Button color="red" className="w-full">Login</Button></Link>
       </div>
     </div>
   );
