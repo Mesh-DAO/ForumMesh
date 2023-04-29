@@ -20,25 +20,21 @@ export function SideBar() {
             <Input placeHolder="Search" borderColor="transparent"  className="ml-2 flex-grow"/>
         </div>
         
-        <div className="flex flex-col gap-10">
-            <div className="flex flex-col w-[60%]">
+        <div className="flex flex-col gap-10 w-[60%]">
+            <div className="flex flex-col">
                 <Title size="sm" color="gray" className="pl-[10%] mb-[10px]">MENU</Title>
                 <MenuItem><List/>Questions</MenuItem>
                 <MenuItem><Tag/>Tags</MenuItem>
                 <MenuItem><Award/>Ranking</MenuItem>
             </div>
             
-            <div className="flex flex-col">
+            <div className="flex flex-col ">
                 <Title size="sm" color="gray" className="pl-[10%] mb-[10px]">PERSONAL NAVIGATOR</Title>
                 <MenuItem><HelpCircle/>Your questions</MenuItem>
                 <MenuItem><MessageCircle/>Your answers</MenuItem>
                 <MenuItem><Heart/>Your likes & Votes</MenuItem>
             </div>
         </div>
-        {/* <div className="flex flex-row items-center justify-center gap-5">
-            <Github/>
-            <Instagram/>
-        </div> */}
       </div>
         <div className="fixed bottom-10 flex items-center justify-center w-[20%]">
           <div className="flex flex-row gap-3 items-center justify-center">
