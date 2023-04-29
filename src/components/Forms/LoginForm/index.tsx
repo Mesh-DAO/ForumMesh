@@ -16,7 +16,7 @@ export function LoginForm() {
         <Input placeHolder="Username" />
         <Input placeHolder="Password" />
 
-        <Button color="orange" className="w-full">
+        <Button color="blue" textColor="white" className="w-full">
           Login
         </Button>
       </div>

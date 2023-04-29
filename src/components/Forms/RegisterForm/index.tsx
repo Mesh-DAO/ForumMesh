@@ -19,7 +19,7 @@ export function RegisterForm() {
         <Input placeHolder="Email" />
         <Input placeHolder="Password" />
         <Input placeHolder="Repeat password" />
-        <Button color="orange" className="w-full">
+        <Button color="blue" textColor="white" className="w-full">
           Register
         </Button>
         <Link href="/login"><Button color="white" className="w-full">Login</Button></Link>

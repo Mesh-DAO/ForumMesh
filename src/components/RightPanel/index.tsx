@@ -10,12 +10,12 @@ export function RightPanel(){
                 <Title><Star/>Must-read posts</Title>
                 <hr />
                 <LinkPanel>Please read rules before you start working on a platform</LinkPanel>
-                <LinkPanel>Vision & Strategy of Alemhelp</LinkPanel>
+                <LinkPanel>Vision & Strategy</LinkPanel>
             </div>
             <div className="flex flex-col gap-3">
                 <Title><LinkIcon/> Must-read posts</Title>
                 <hr />
-                <LinkPanel>Alemhelp source-code on github</LinkPanel>
+                <LinkPanel>Source-code on github</LinkPanel>
                 <LinkPanel>Golang best-practices</LinkPanel>
                 <LinkPanel>Alem School dashboard</LinkPanel>
             </div>
