@@ -28,7 +28,7 @@ export function Header() {
 
       <div className="flex items-center">
         <Link href="/register">
-          <Button color="blue" textColor="white">
+          <Button color="blue" textColor="white" className="gap-2">
             <Userplus />
             Register
           </Button>

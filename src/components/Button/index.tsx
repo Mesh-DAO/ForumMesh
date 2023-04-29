@@ -41,7 +41,7 @@ export function Button({
           "bg-[#EAEAEA] hover:ring-1 hover:ring-[#474747]": color === "white",
         },
         {
-          "bg-gradient-to-r from-[#20306C] to-[#516FD8] hover:ring-1 hover:ring-[#20306C] ": color === "blue",
+          "bg-gradient-to-r from-[#20306C] to-[#516FD8] hover:ring-1 hover:ring-[#20306C] text-white": color === "blue",
         },
         {
           "bg-[#EAEAEA] hover:ring-1 hover:ring-[#fc3545] hover:bg-[#FF4555] hover:text-white": color === "red",
@@ -49,7 +49,7 @@ export function Button({
         className
       )}
     >
-      <Title color={textColor}>{children}</Title>
+      {children}
     </button>
   );
 }
