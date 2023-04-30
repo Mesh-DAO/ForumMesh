@@ -9,7 +9,7 @@ export default function Forum() {
   return (
     <div>
       <Header />
-      <div className="flex items-center justify-between h-screen w-full">
+      <div className="flex flex-row items-center justify-between h-screen w-full">
         <SideBar />
         <AllPosts />
         <RightPanel />

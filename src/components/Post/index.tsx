@@ -9,8 +9,7 @@ import { IPost } from "@/interfaces/Posts/IPost";
 
 export function Post({ item }: { item: IPost }) {
   return (
-    <div className="flex flex-col max-w[300px] border-2 border-[#EAEAEA] mr-[2%] ml-[30%] p-[15px] gap-5 rounded-md">
-      <div>
+    <div className="flex flex-col border-2 w-[50vw] border-[#EAEAEA] mr-[2%] ml-[25vw] p-[15px] gap-5 rounded-md">
         <div className="flex flex-row mb-[5%]">
           <img src={item.img} alt="foto perfil" />
           <div className="flex flex-row justify-between w-full">
@@ -40,7 +39,7 @@ export function Post({ item }: { item: IPost }) {
             <Shares />
           </div>
         </div>
-      </div>
+      
     </div>
   );
 }
