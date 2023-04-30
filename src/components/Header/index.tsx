@@ -6,7 +6,7 @@ import { HeaderItem } from "../HeaderItem";
 
 export function Header() {
   return (
-    <div className="bg-white absolute top-0 w-full h-20 drop-shadow-sm shadow-md rounded-b-md flex items-center justify-between px-10">
+    <div className="fixed bg-white top-0 w-full h-20 drop-shadow-sm shadow-md rounded-b-md flex items-center justify-between px-10">
       <Link href="https://mesh-site-bf2x.vercel.app/#inte" target="_blank">
         <div className="flex items-center gap-[15px]">
           <img src="/LogoLight.png" alt=""/>
