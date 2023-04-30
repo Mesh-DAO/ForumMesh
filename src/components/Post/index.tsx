@@ -9,8 +9,8 @@ import { IPost } from "@/interfaces/Posts/IPost";
 
 export function Post({ item }: { item: IPost }) {
   return (
-    <div className="flex flex-col border-2 w-[50vw] border-[#EAEAEA] mr-[2%] ml-[25vw] p-[15px] gap-5 rounded-md">
-        <div className="flex flex-row mb-[5%]">
+    <div className="flex flex-col border-2 w-[50vw] border-[#EAEAEA] mr-[2%] ml-[25vw] p-[15px] rounded-md gap-2">
+        <div className="flex flex-row mb-[3%]">
           <img src={item.img} alt="foto perfil" />
           <div className="flex flex-row justify-between w-full">
             <div className="pl-[2%]">
@@ -20,7 +20,7 @@ export function Post({ item }: { item: IPost }) {
             <Dots />
           </div>
         </div>
-        <div>
+        <div className="flex flex-col gap-6 pl-1">
           <Title>
             <strong>{item.title}</strong>
           </Title>
