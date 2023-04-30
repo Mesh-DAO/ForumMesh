@@ -17,15 +17,21 @@ export function Header() {
       </Link>
 
       <div className="flex items-center h-full cursor-pointer">
-        <HeaderItem>
-          Forum
-        </HeaderItem>
-        <HeaderItem>
-          Cursos
-        </HeaderItem>
-        <HeaderItem>
-          Incubadora
-        </HeaderItem>
+        <Link href="/forum" className="h-full">
+          <HeaderItem> 
+              Forum
+          </HeaderItem>
+        </Link>
+        <Link href="/cursos" className="h-full">
+          <HeaderItem>
+            Cursos
+          </HeaderItem>
+        </Link>
+        <Link href="/incubadora" className="h-full">
+          <HeaderItem>
+            Incubadora
+          </HeaderItem>
+        </Link>
       </div>
 
       <div className="flex items-center">
