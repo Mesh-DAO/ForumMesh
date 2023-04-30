@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "../Button";
 import { Logo, Userplus } from "../Icons";
 import { Title } from "../Title";
+import { HeaderItem } from "../HeaderItem";
 
 export function Header() {
   return (
@@ -15,16 +16,16 @@ export function Header() {
         </div>
       </Link>
 
-      <div className="flex items-center gap-10">
-        <Title>
+      <div className="flex items-center h-full cursor-pointer">
+        <HeaderItem>
           Forum
-        </Title>
-        <Title>
+        </HeaderItem>
+        <HeaderItem>
           Cursos
-        </Title>
-        <Title>
+        </HeaderItem>
+        <HeaderItem>
           Incubadora
-        </Title>
+        </HeaderItem>
       </div>
 
       <div className="flex items-center">
