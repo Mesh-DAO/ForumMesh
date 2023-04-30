@@ -30,6 +30,24 @@ export function AllPosts() {
         "O silvio santos é tao legal, eu gosto tanto dele, silvio santos se um dia vc ler isso eu gostaria que voce jogasse um aviaozinho pra mim, voce é o meu idolo e eu sou o teu fã",
       time: "5 minutos atras",
     },
+    {
+      id: 4,
+      name: "Nosferas",
+      img: "/fotoPessoa.png",
+      title: "Eu amo o Silvio Santos mais que tudo",
+      content:
+        "O silvio santos é tao legal, eu gosto tanto dele, silvio santos se um dia vc ler isso eu gostaria que voce jogasse um aviaozinho pra mim, voce é o meu idolo e eu sou o teu fã",
+      time: "5 minutos atras",
+    },
+    {
+      id: 5,
+      name: "Nosferas",
+      img: "/fotoPessoa.png",
+      title: "Eu amo o Silvio Santos mais que tudo",
+      content:
+        "O silvio santos é tao legal, eu gosto tanto dele, silvio santos se um dia vc ler isso eu gostaria que voce jogasse um aviaozinho pra mim, voce é o meu idolo e eu sou o teu fã",
+      time: "5 minutos atras",
+    },
   ];
 
   return (
