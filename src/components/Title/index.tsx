@@ -29,7 +29,7 @@ export function Title({
           "text-2xl": size === "2xl",
         },
         {
-          "text-sm": size === "sm"
+          "text-sm": size === "sm",
         },
         {
           "font-bold": bold === 700,
@@ -41,13 +41,13 @@ export function Title({
           "text-black": color === "black",
         },
         {
-          "text-gray-500": color === "gray"
+          "text-gray-500": color === "gray",
         },
         {
-          "text-[#1682FD]": color === "blue"
+          "text-[#1682FD]": color === "blue",
         },
         {
-          "text-white": color === "white"
+          "text-white": color === "white",
         }
       )}
     >

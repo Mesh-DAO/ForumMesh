@@ -1,58 +1,20 @@
+"use client";
 import { IPost } from "@/interfaces/Posts/IPost";
 import { Post } from ".";
+import { useEffect, useState } from "react";
+import { PostService } from "@/services/PostService";
 
 export function AllPosts() {
-  const data: IPost[] = [
-    {
-      id: 1,
-      name: "Nosferas",
-      img: "/fotoPessoa.png",
-      title: "Eu amo o Silvio Santos mais que tudo",
-      content:
-        "O silvio santos é tao legal, eu gosto tanto dele, silvio santos se um dia vc ler isso eu gostaria que voce jogasse um aviaozinho pra mim, voce é o meu idolo e eu sou o teu fã",
-      time: "5 minutos atras",
-    },
-    {
-      id: 2,
-      name: "Nosferas",
-      img: "/fotoPessoa.png",
-      title: "Eu amo o Silvio Santos mais que tudo",
-      content:
-        "O silvio santos é tao legal, eu gosto tanto dele, silvio santos se um dia vc ler isso eu gostaria que voce jogasse um aviaozinho pra mim, voce é o meu idolo e eu sou o teu fã",
-      time: "5 minutos atras",
-    },
-    {
-      id: 3,
-      name: "Nosferas",
-      img: "/fotoPessoa.png",
-      title: "Eu amo o Silvio Santos mais que tudo",
-      content:
-        "O silvio santos é tao legal, eu gosto tanto dele, silvio santos se um dia vc ler isso eu gostaria que voce jogasse um aviaozinho pra mim, voce é o meu idolo e eu sou o teu fã",
-      time: "5 minutos atras",
-    },
-    {
-      id: 4,
-      name: "Nosferas",
-      img: "/fotoPessoa.png",
-      title: "Eu amo o Silvio Santos mais que tudo",
-      content:
-        "O silvio santos é tao legal, eu gosto tanto dele, silvio santos se um dia vc ler isso eu gostaria que voce jogasse um aviaozinho pra mim, voce é o meu idolo e eu sou o teu fã",
-      time: "5 minutos atras",
-    },
-    {
-      id: 5,
-      name: "Nosferas",
-      img: "/fotoPessoa.png",
-      title: "Eu amo o Silvio Santos mais que tudo",
-      content:
-        "O silvio santos é tao legal, eu gosto tanto dele, silvio santos se um dia vc ler isso eu gostaria que voce jogasse um aviaozinho pra mim, voce é o meu idolo e eu sou o teu fã",
-      time: "5 minutos atras",
-    },
-  ];
+  const [allPosts, setAllPosts] = useState<IPost[]>([]);
+  useEffect(() => {
+    PostService.findAll()
+      .then(({ data }) => setAllPosts(data))
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
-    <div className="flex flex-col gap-8 h-full mt-[20%]">
-      {data.map((item: IPost) => {
+    <div className="flex flex-col gap-8 h-full mt-[20rem]">
+      {allPosts.map((item: IPost) => {
         return <Post item={item} />;
       })}
     </div>

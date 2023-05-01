@@ -1,8 +1,11 @@
 export interface IPost {
-  id: number | string;
-  name: string;
-  img: string;
+  id: string;
   title: string;
-  content: string;
-  time: string;
+  creatorId: string;
+  creatorName: string;
+  message: string;
+  type: string;
+  image: string;
+  createdAt: string;
+  updatedAt?: string;
 }
