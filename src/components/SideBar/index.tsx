@@ -16,15 +16,11 @@ import { Title } from "../Title";
 
 export function SideBar() {
   return (
-    <div className="fixed top-[130px] flex  flex-col justify-between h-[80%] w-[20%]">
+    <div className="fixed pt-24 pb-4 flex flex-col justify-between w-[20%] h-screen bg-white">
       <div className="flex flex-col w-full gap-4">
         <div className="flex items-center mb-5 pl-[10%]">
           <Search />
-          <Input
-            placeHolder="Search"
-            borderColor="transparent"
-            className="ml-2 flex-grow"
-          />
+          <Input placeHolder="Search" className="ml-2 flex-grow" />
         </div>
 
         <div className="flex flex-col gap-6 w-[60%]">

@@ -1,2 +1,2 @@
-export * from './Posts'
-export * from './Users'
+export * from './IPosts'
+export * from './IUsers'

@@ -1,9 +1,11 @@
-import { Header } from "@/components/Header";
+import { AllPosts } from "@/components/Post/AllPosts";
+import { RightPanel } from "@/components/RightPanel";
 
-export function Home() {
+export default function Home() {
   return (
-      <div>
-        <Header />
-      </div>
+    <div className="flex flex-row items-center justify-between">
+      <AllPosts />
+      <RightPanel />
+    </div>
   );
 }

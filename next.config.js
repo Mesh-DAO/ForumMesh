@@ -7,12 +7,6 @@ const nextConfig = {
     unoptimized: true,
     domains: [
       "api.dicebear.com",
-      "via.placeholder.com",
-      "pbs.twimg.com",
-      "i.seadn.io",
-      "smolverse.lol",
-      "d3k81ch9hvuctc.cloudfront.net",
-      "assets-global.website-files.com",
     ],
   },
   experimental: {

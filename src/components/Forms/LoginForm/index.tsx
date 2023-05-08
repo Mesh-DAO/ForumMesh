@@ -7,7 +7,7 @@ export function LoginForm() {
     <div className="flex items-center justify-center w-[35%]">
       <div className="flex flex-col w-[70%] gap-4">
         <Title className="mb-2" size="2xl" bold={900}>
-          We've Missed You!
+          We have Missed You!
         </Title>
         <Title size="lg">
           More than 150 questions are waiting for your wise!

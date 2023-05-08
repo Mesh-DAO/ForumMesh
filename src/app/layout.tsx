@@ -1,5 +1,7 @@
-import { AppContexts } from "@/contexts";
+import { Loading, GlobalModals } from "@/components/Shared";
 import "./globals.css";
+import { AppContexts } from "@/contexts";
+import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
 
 export const metadata = {
@@ -15,10 +17,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AppContexts>
-          <Toaster toastOptions={{ duration: 2000 }} />
-          {children}
-        </AppContexts>
+        <Suspense fallback={<Loading />}>
+          <AppContexts>
+            <Toaster position="top-center" />
+            <GlobalModals />
+            {children}
+          </AppContexts>
+        </Suspense>
       </body>
     </html>
   );

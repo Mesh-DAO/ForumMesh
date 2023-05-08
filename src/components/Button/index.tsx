@@ -21,8 +21,6 @@ export function Button({
   children,
   onClick,
   color,
-  textColor,
-  hoverTextColor,
   width = "w-[113px]",
   disable,
 }: Props) {
@@ -34,17 +32,18 @@ export function Button({
       className={classNames(
         `rounded-md transition-all ease-in-out duration-300 no-underline ${width} h-[38px] flex justify-center items-center `,
         {
-          "bg-[#F48023] hover:ring-1 hover:ring-[#b67643] ":
-            color === "orange",
+          "bg-[#F48023] hover:ring-1 hover:ring-[#b67643] ": color === "orange",
         },
         {
           "bg-[#EAEAEA] hover:ring-1 hover:ring-[#474747]": color === "white",
         },
         {
-          "bg-gradient-to-r from-[#20306C] to-[#516FD8] hover:ring-1 hover:ring-[#20306C] text-white": color === "blue",
+          "bg-brand-blue text-white":
+            color === "blue",
         },
         {
-          "bg-[#EAEAEA] hover:ring-1 hover:ring-[#fc3545] hover:bg-[#FF4555] hover:text-white": color === "red",
+          "bg-[#EAEAEA] hover:ring-1 hover:ring-[#fc3545] hover:bg-[#FF4555] hover:text-white":
+            color === "red",
         },
         className
       )}

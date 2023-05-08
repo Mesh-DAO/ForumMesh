@@ -1,4 +1,4 @@
-import { ILoginResponse, ISignUpPayload, IUser } from "@/interfaces/Users";
+import { ILoginResponse, ISignUpPayload, IUser } from "@/interfaces/IUsers";
 import { Api } from "../providers";
 
 function login(email: string, password: string) {

@@ -1,21 +1,14 @@
 "use client";
-import { IPost } from "@/interfaces/Posts/IPost";
-import { Post } from ".";
-import { useEffect, useState } from "react";
-import { PostService } from "@/services/PostService";
+import { useGetPosts } from "@/hooks/useGetPosts";
+import { Post } from "./Post";
 
 export function AllPosts() {
-  const [allPosts, setAllPosts] = useState<IPost[]>([]);
-  useEffect(() => {
-    PostService.findAll()
-      .then(({ data }) => setAllPosts(data))
-      .catch((err) => console.log(err));
-  }, []);
+  const posts = useGetPosts();
 
   return (
     <div className="flex flex-col gap-8 h-full mt-[20rem]">
-      {allPosts.map((item: IPost) => {
-        return <Post item={item} />;
+      {posts.map((item) => {
+        return <Post item={item} key={item.id} />;
       })}
     </div>
   );
