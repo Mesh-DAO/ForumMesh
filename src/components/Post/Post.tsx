@@ -26,7 +26,7 @@ export function Post({ item, key }: { item: IPost; key: string }) {
       <div className="flex w-full">
         <div className="w-10 h-10 border border-gray-500 rounded-full">
           <Image
-            className="rounded-full"
+            className="rounded-full object-cover h-full "
             onError={() => setError(true)}
             src={image}
             loading="lazy"
