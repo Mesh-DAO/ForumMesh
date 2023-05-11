@@ -6,7 +6,7 @@ export function AllPosts() {
   const posts = useGetPosts();
 
   return (
-    <div className="flex flex-col gap-8 h-full mt-[20rem]">
+    <div className="flex flex-col gap-8 h-full mt-32">
       {posts.map((item) => {
         return <Post item={item} key={item.id} />;
       })}

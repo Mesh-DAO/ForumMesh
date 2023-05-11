@@ -1,32 +1,35 @@
 "use client";
 import Link from "next/link";
-import { Button } from "../../Button";
-import { Input } from "../../Input";
-import { Title } from "../../Title";
 import { Controller, useForm } from "react-hook-form";
-import { createUserFormResolve } from "@/validade";
-
-type CreateUserData = {
-  username: string;
-  email: string;
-  password: string;
-  repeatPassword: string;
-};
+import { RegisterResolve } from "@/validation";
+import { useAuthContext } from "@/contexts";
+import { ISignUpPayload } from "@/interfaces";
+import { Button } from "@/components/Button";
+import { Title } from "@/components/Title";
+import { Input } from "@/components/Input";
+import { toast } from "react-hot-toast";
 
 export function RegisterForm() {
+  const { signUp } = useAuthContext();
   const {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<CreateUserData>({
-    resolver: createUserFormResolve,
+    reset,
+  } = useForm<ISignUpPayload>({
+    resolver: RegisterResolve,
   });
 
-  const handleCreateUser = (values: any) => {
-    console.log(values);
-  };
-
-  console.log(errors);
+  async function onSubmit(values: ISignUpPayload) {
+    try {
+      await signUp(values);
+      toast.success("Created Account!");
+      reset({ username: "", email: "", password: "" });
+    } catch (error) {
+      toast.error("Error to create account!");
+      console.error(error);
+    }
+  }
 
   return (
     <div className="flex items-center justify-center w-[35%]">
@@ -38,10 +41,7 @@ export function RegisterForm() {
           Get more features and priviliges by joining to the most helpful
           community
         </Title>
-        <form
-          onSubmit={handleSubmit(handleCreateUser)}
-          className="flex flex-col gap-4"
-        >
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
           <Controller
             name="username"
             control={control}
@@ -51,38 +51,31 @@ export function RegisterForm() {
           <Controller
             name="email"
             control={control}
-            render={({ field }) => <Input type="email" placeHolder="Email" {...field} />}
+            render={({ field }) => (
+              <Input type="email" placeHolder="Email" {...field} />
+            )}
           />
           <Controller
             name="password"
             control={control}
-            render={({ field }) => <Input type="password" placeHolder="Password" {...field} />}
-          />
-          <Controller
-            name="repeatPassword"
-            control={control}
-            render={({ field }) => <Input type="password" placeHolder="repeatPassword" {...field} />}
+            render={({ field }) => (
+              <Input type="password" placeHolder="Password" {...field} />
+            )}
           />
           <div className="text-[#FF4A48]">
             {errors.username && <p>{errors.username.message}</p>}
             {errors.email && <p>{errors.email.message}</p>}
             {errors.password && <p>{errors.password.message}</p>}
-            {errors.repeatPassword && <p>{errors.repeatPassword.message}</p>}
           </div>
-          <Button
-            color="blue"
-            textColor="white"
-            className="w-full"
-            type="submit"
-          >
+          <Button color="blue" className="w-full" type="submit">
             Register
           </Button>
-          <Link href="/login">
-            <Button color="red" className="w-full">
-              Login
-            </Button>
-          </Link>
         </form>
+        <Link href="/login">
+          <Button color="white" className="w-full">
+            Login
+          </Button>
+        </Link>
       </div>
     </div>
   );
