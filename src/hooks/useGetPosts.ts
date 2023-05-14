@@ -1,13 +1,16 @@
 import { PostService } from "@/services/PostService";
 import { PostStore } from "@/stores";
-import { useEffect } from "react";
+import { useEffect, useTransition } from "react";
 
 export function useGetPosts() {
   const { posts, setPosts } = PostStore((state) => state);
+  const [isPending, startTransition] = useTransition();
   useEffect(() => {
-    PostService.findAll()
-      .then(({ data }) => setPosts(data))
-      .catch((err) => console.log(err));
+    startTransition(() => {
+      PostService.findAll()
+        .then(({ data }) => setPosts(data))
+        .catch((err) => console.log(err));
+    });
   }, []);
-  return posts;
+  return { posts, isPending };
 }

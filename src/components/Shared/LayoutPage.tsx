@@ -12,7 +12,7 @@ export function LayoutPage({ children, sidebar = true }: Props) {
     <div className="min-h-screen bg-[#FAFAFA]">
       <Header />
       {sidebar && <SideBar />}
-      {children}
+      <div className="pl-[23%]">{children}</div>
     </div>
   );
 }
