@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import TailwindForms from '@tailwindcss/forms';
+
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -22,8 +24,10 @@ module.exports = {
         "brand-blue": "#5271DB",
         "brand-red": "#FF4A48",
         "brand-bluedark": "#323B6E"
-      },
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    TailwindForms,
+  ],
 };
