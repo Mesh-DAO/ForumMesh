@@ -1,2 +1,3 @@
-export * from './AllPosts'
-export * from './Post'
+export * from "./AllPosts";
+export * from "./Post";
+export * from "./PostOpened";

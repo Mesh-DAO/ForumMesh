@@ -1,0 +1,5 @@
+export function ProfilePanel() {
+  return(
+    <></>
+  )
+}

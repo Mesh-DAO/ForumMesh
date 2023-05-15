@@ -17,13 +17,13 @@ export function Post({ item, key }: { item: IPost; key: string }) {
   const date = DateHelper.toFormat(item.createdAt);
   const image = !error
     ? item.image
-    : `https://api.dicebear.com/6.x/pixel-art/svg?seed=${"asd"}`;
+    : `https://api.dicebear.com/6.x/pixel-art/svg?seed=${item.creatorName}`;
 
   return (
     <Link href={`post/${item.id}`}>
       <div
         key={key}
-        className="flex flex-col border-2 w-[50vw] border-[#EAEAEA] p-[15px] rounded-md gap-2 shadow-lg hover:border-[#c9c9c9] hover:shadow-xl transition-all duration-300 ease-in-out"
+        className="flex flex-col border-2 w-full border-[#EAEAEA] p-[15px] rounded-md gap-2 shadow-lg hover:border-[#c9c9c9] hover:shadow-xl transition-all duration-300 ease-in-out"
       >
         <div className="flex w-full">
           <div className="w-10 h-10 border border-gray-500 rounded-full">
@@ -58,7 +58,6 @@ export function Post({ item, key }: { item: IPost; key: string }) {
 
           <div className="flex flex-row p-4 gap-2">
             <Views />
-            <Comments />
             <Shares />
           </div>
         </div>

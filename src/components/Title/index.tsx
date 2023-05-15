@@ -26,6 +26,9 @@ export function Title({
           "text-lg": size === "lg",
         },
         {
+          "text-xl": size === "xl",
+        },
+        {
           "text-2xl": size === "2xl",
         },
         {

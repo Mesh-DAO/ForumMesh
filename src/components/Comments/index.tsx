@@ -1,13 +1,13 @@
-import { MessageSquare } from "../Icons/MessageSquare";
-type Props = {
-  comments?: string;
-};
+import { OneComment } from "./OneComment";
 
-export function Comments({ comments = "15" }: Props) {
+export function Comments({ comments }: { comments: any }) {
   return (
-    <span className="flex flex-row items-center gap-1">
-      <MessageSquare />
-      {comments}
-    </span>
+    <div>
+      {/* {comments.map((item) => {
+        return(
+          <OneComment />
+        )
+      })} */}
+    </div>
   );
 }
