@@ -7,8 +7,7 @@ export function Header() {
   return (
     <div className="fixed top-0 bg-white w-full h-20 drop-shadow-sm shadow-md rounded-b-md flex items-center justify-between px-10 z-10">
       <Link
-        href="https://mesh-site-bf2x.vercel.app/#inte"
-        target="_blank"
+        href="/"
         className="flex items-center gap-[15px]"
       >
         <div className="w-10">

@@ -17,3 +17,9 @@
 .animate-pulse-heartbeat {
   animation: pulse-heartbeat 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
+.shimmer {
+  @apply animate-pulse;
+  @apply bg-gray-300;
+  @apply dark:bg-gray-600;
+}
