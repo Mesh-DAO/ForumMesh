@@ -19,8 +19,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     StorageHelper.getItem("token")
   );
 
-  async function login(email: string, password: string) {
-    const { status, data } = await AuthService.login(email, password);
+  async function login(username: string, password: string) {
+    const { status, data } = await AuthService.login(username, password);
     if (status === 200) {
       setToken(data.token);
       setUser(data.user);

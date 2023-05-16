@@ -5,9 +5,7 @@ import { Title } from "@/components/Title";
 import { useAuthContext } from "@/contexts";
 import { LoginResolve } from "@/validation/Login";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
-import toast from "react-hot-toast";
 
 type ILoginForm = {
   username: string;
