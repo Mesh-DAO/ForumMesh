@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import classNames from "classnames";
 import React, { ChangeEvent } from "react";
 
@@ -10,19 +10,21 @@ type Props = {
   onChange?: (event: ChangeEvent<HTMLSelectElement>) => void;
 };
 
-export function Select({ options, className, onChange } : Props) {
+export function Select({ options, className, onChange, ...props }: Props) {
   return (
     <select
+      {...props}
       onChange={onChange}
       className={classNames(
-         "form-select no-underline outline-none bg-white border-2 border-[#EAEAEA] rounded-md py-2 px-4 w-full h-[42px]",
+        "form-select no-underline outline-none bg-white border-2 border-[#EAEAEA] rounded-md py-2 px-4 w-full h-[42px]",
         className
       )}
-      defaultValue={options[0]}
     >
-      {options.map(opt => (
-        <option className="" value={opt} key={opt}>{opt}</option>
+      {options.map((opt) => (
+        <option value={opt} key={opt}>
+          {opt}
+        </option>
       ))}
     </select>
-  )
+  );
 }

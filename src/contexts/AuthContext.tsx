@@ -3,7 +3,12 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { StorageHelper } from "../helpers";
 import { setBearerToken } from "../providers";
 import { AuthService } from "../services";
-import { IAuthContext, IUser, ISignUpPayload } from "@/interfaces";
+import {
+  IAuthContext,
+  IUser,
+  ISignUpPayload,
+  ILoginResponse,
+} from "@/interfaces";
 
 const AuthContext = createContext<IAuthContext>(undefined!);
 
@@ -27,6 +32,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       StorageHelper.setItem("user", data.user);
       StorageHelper.setItem("token", data.token);
     }
+    return { status, data };
   }
 
   async function signUp(payload: ISignUpPayload) {
