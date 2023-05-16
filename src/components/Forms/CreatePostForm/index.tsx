@@ -9,7 +9,7 @@ import { AddImage, Send } from "@/components/Icons";
 export function CreatePostForm() {
 	return (
 		<form
-			className="flex flex-col w-2/4 h-[562px] border-2 border-[#EAEAEA] rounded-md gap-5 px-8 py-10 shadow-md"
+			className="flex flex-col w-2/4 h-[562px] flex-1 border-2 border-[#EAEAEA] rounded-md gap-5 px-8 py-10 shadow-md mt-32"
 		>
 			<Select placeHolder="Choose categories" options={['option1', 'option2']} value="option1" />
 
