@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Login() {
   return (
     <LayoutPage sidebar={false}>
-      <div className="flex items-center justify-between bg-white">
+      <div className="flex items-center justify-between bg-white w-full">
         <LoginForm />
         <div className="w-[60%] h-screen">
           <Image
