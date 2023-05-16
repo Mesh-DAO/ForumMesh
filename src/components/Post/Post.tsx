@@ -20,6 +20,26 @@ export function Post({ item, key }: { item: IPost; key: string }) {
     : `https://api.dicebear.com/6.x/pixel-art/svg?seed=${"asd"}`;
 
   return (
+    <div
+      key={key}
+      className="flex flex-col border-2 w-[50vw] border-[#EAEAEA] ml-[25vw] p-[15px] rounded-md gap-2"
+    >
+      <div className="flex w-full">
+        <div className="w-10 h-10 border border-gray-500 rounded-full">
+          <Image
+            className="rounded-full object-cover h-full "
+            onError={() => setError(true)}
+            src={image}
+            loading="lazy"
+            width={200}
+            height={200}
+            alt="fotoperfil"
+          />
+        </div>
+        <div className="flex justify-between w-full">
+          <div className="pl-[2%]">
+            <Title bold={700}>{item.creatorName}</Title>
+            <small>{date}</small>
     <Link href={`post/${item.id}`}>
       <div
         key={key}

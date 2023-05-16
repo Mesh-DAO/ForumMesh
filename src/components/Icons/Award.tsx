@@ -7,7 +7,7 @@ export function Award() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_1_2553)">
+      <g clipPath="url(#clip0_1_2553)">
         <path
           d="M9 11.25C11.8995 11.25 14.25 8.8995 14.25 6C14.25 3.10051 11.8995 0.75 9 0.75C6.10051 0.75 3.75 3.10051 3.75 6C3.75 8.8995 6.10051 11.25 9 11.25Z"
           stroke="#FF4555"
