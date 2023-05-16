@@ -1,6 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-import TailwindForms from '@tailwindcss/forms';
-
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -27,7 +25,5 @@ module.exports = {
       }
     },
   },
-  plugins: [
-    TailwindForms,
-  ],
+  plugins: [],
 };
