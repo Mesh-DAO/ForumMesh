@@ -5,7 +5,7 @@ import { LayoutPage } from '@/components/Shared';
 export default function CreatePost() {
 	return (
 		<LayoutPage>
-			<main className="flex gap-11 h-screen">
+			<main className="flex flex-row gap-8">
 				<CreatePostForm />
 				<RightPanel />
 			</main>
