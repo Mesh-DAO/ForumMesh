@@ -22,7 +22,7 @@ module.exports = {
         "brand-blue": "#5271DB",
         "brand-red": "#FF4A48",
         "brand-bluedark": "#323B6E"
-      }
+      },
     },
   },
   plugins: [],

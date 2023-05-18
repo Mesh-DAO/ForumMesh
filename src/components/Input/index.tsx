@@ -5,11 +5,11 @@ type Props = {
   className?: string;
   type?: string;
 
-  placeHolder: string;
+  placeHolder?: string;
   name?: string;
 };
 
-export function Input({ className, placeHolder, type = 'text', name, ...props }: Props) {
+export function Input({ className, placeHolder= '', type = 'text', name, ...props }: Props) {
   return (
     <input
       type={type}
