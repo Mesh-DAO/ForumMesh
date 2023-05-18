@@ -10,10 +10,8 @@ import toast from "react-hot-toast";
 import { IPostPayload } from "@/interfaces";
 import { PostResolve } from "@/validation/Post";
 import { PostService } from "@/services/PostService";
-import { useState } from "react";
 
 export function CreatePostForm() {
-  const [file, setFile] = useState<any>();
   const {
     control,
     handleSubmit,
@@ -25,10 +23,8 @@ export function CreatePostForm() {
 
   async function onSubmit(values: IPostPayload) {
     try {
-      console.log(values);
-      const payload = { ...values, file };
-      await PostService.create(payload);
-      toast.success("Post created!");
+      const { status } = await PostService.create(values);
+      if (status === 201) toast.success("Post created!");
       reset({ image: "", message: "", title: "", type: undefined });
     } catch (error) {
       toast.error("Error to create a post!");
@@ -39,7 +35,7 @@ export function CreatePostForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col w-[65%] mt-32 min-h-96 h-96 border-2 border-[#EAEAEA] rounded-md gap-5 p-10 shadow-md"
+      className="flex flex-col w-[65%] mt-32 min-h-96 border-2 border-[#EAEAEA] rounded-md gap-5 p-10 shadow-md"
     >
       <Controller
         name="type"
@@ -47,9 +43,8 @@ export function CreatePostForm() {
         render={({ field }) => (
           <Select
             {...field}
-            onChange={(e) => console.log(e)}
             placeHolder="Choose categories"
-            options={["option1", "option2"]}
+            options={["normal", "question"]}
           />
         )}
       />
@@ -64,22 +59,27 @@ export function CreatePostForm() {
         name="message"
         control={control}
         render={({ field }) => (
-          <TextArea {...field} placeHolder="Type your question" />
+          <TextArea {...field} rows={10} placeHolder="Type your question" />
         )}
       />
+
+      <div className="flex flex-col gap-2 text-red-600 font-Roboto text-sm">
+        <span>{errors.image && errors.image.message}</span>
+        <span>{errors.message && errors.message.message}</span>
+        <span>{errors.title && errors.title.message}</span>
+      </div>
 
       <div className="flex justify-between">
         <Controller
           name="image"
           control={control}
           render={({ field }) => (
-            <InputFile {...field} onChange={(e) => setFile(e.target.files)}>
+            <InputFile {...field}>
               <AddImage />
               Add Image
             </InputFile>
           )}
         />
-
         <div className="flex gap-5">
           <Button type="button" color="white" className="font-medium text-xs">
             Save as draft
