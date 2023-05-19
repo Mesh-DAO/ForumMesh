@@ -1,4 +1,4 @@
-import { ArrowUp } from "../Icons/ArrowUp";
+import { ArrowUp } from "../../Icons/ArrowUp";
 
 type Props = {
   shares?: string;

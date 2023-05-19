@@ -1,4 +1,4 @@
-import { MessageSquare } from "../Icons/MessageSquare";
+import { MessageSquare } from "../../Icons/MessageSquare";
 type Props = {
   comments?: string;
 };
