@@ -10,7 +10,7 @@ export function useGetPosts() {
     startTransition(() => {
       PostService.findAll()
         .then(({ data }) => setPosts(data))
-        .catch((err) => console.log(err));
+        .catch((err) => console.error(err));
     });
   }, []);
   return { posts, isPending };

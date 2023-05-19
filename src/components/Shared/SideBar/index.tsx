@@ -10,10 +10,10 @@ import {
   Github,
   Instagram,
   Facebook,
-} from "../Icons";
-import { Input } from "../Input";
-import { MenuItem } from "../MenuItem";
-import { Title } from "../Title";
+} from "../../Icons";
+import { Input } from "../../Input";
+import { MenuItem } from "./MenuItem";
+import { Title } from "../../Title";
 import { StorageHelper } from "@/helpers";
 
 export function SideBar() {

@@ -1,16 +1,21 @@
-import React, { useState } from "react";
-import { Input } from "../Input";
+import React from "react";
 import classNames from "classnames";
 
 interface Props {
-  children?: React.ReactNode;
+  children: React.ReactNode;
   className?: string;
+  defaultChecked?: boolean;
 }
 
-export function InputRadio({ children, className }: Props) {
+export function InputRadio({ children, className, defaultChecked }: Props) {
   return (
     <label className="relative">
-      <input type="radio" name="tag" className="z-[-1] absolute peer" ></input>
+      <input
+        type="radio"
+        name="tag"
+        defaultChecked={defaultChecked}
+        className="z-[-1] absolute peer"
+      />
       <div
         className={classNames(
           "flex font-Roboto text-sm font-normal gap-2 h-7 px-3 items-center rounded-2xl bg-[#EAEAEA] text-[#808080] cursor-pointer peer-checked:bg-brand-blue peer-checked:text-white transition duration-[400ms]",
@@ -20,5 +25,5 @@ export function InputRadio({ children, className }: Props) {
         {children}
       </div>
     </label>
-  )
+  );
 }

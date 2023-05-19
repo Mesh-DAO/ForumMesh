@@ -1,4 +1,4 @@
-import { Eye } from "../Icons/Eye";
+import { Eye } from "../../Icons/Eye";
 type Props = {
   views?: string;
 };

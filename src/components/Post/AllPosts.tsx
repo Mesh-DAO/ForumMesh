@@ -1,7 +1,7 @@
 "use client";
 import { useGetPosts } from "@/hooks/useGetPosts";
 import { Post } from "./Post";
-import { PostsShimmer } from "../Shimmer/PostsShimmer";
+import { PostsShimmer } from "../Shared/Shimmer/PostsShimmer";
 import { TagFiltersForm } from "../Forms/TagFiltersForm";
 
 export function AllPosts() {

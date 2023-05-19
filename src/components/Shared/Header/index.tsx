@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { Button } from "../Button";
-import { AddImage, AddQuestionIcon, Logo, Userplus } from "../Icons";
-import { Title } from "../Title";
+import { Button } from "../../Button";
+import { AddImage, AddQuestionIcon, Logo, Userplus } from "../../Icons";
+import { Title } from "../../Title";
 import { StorageHelper } from "@/helpers";
 
 export function Header() {
