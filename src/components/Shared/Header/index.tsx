@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "../../Button";
-import { AddImage, AddQuestionIcon, Logo, Userplus } from "../../Icons";
+import { AddQuestionIcon, Logo, Userplus } from "../../Icons";
 import { Title } from "../../Title";
 import { StorageHelper } from "@/helpers";
 
@@ -16,12 +16,19 @@ export function Header() {
       </Link>
 
       {user ? (
-        <Link href="/create-post">
-          <Button color="blue" width="w-40" textColor="white" className="gap-2">
-            <AddQuestionIcon />
-            Ask a question
-          </Button>
-        </Link>
+        <div>
+          <Link href="/create-post">
+            <Button
+              color="blue"
+              width="w-40"
+              textColor="white"
+              className="gap-2"
+            >
+              <AddQuestionIcon />
+              Ask a question
+            </Button>
+          </Link>
+        </div>
       ) : (
         <div className="flex items-center">
           <Link href="/register">

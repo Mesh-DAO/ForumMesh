@@ -7,18 +7,15 @@ import { TagFiltersForm } from "../Forms/TagFiltersForm";
 export function AllPosts() {
   const { posts, filteredPosts } = useGetPosts();
 
-  const allPosts = filteredPosts.length > 0 ? filteredPosts : posts
+  const allPosts = filteredPosts.length > 0 ? filteredPosts : posts;
 
   return (
     <div className="flex flex-col gap-8 h-full mt-32 w-[65%]">
       <TagFiltersForm />
       {allPosts.length === 0 ? (
-
         <PostsShimmer />
       ) : (
-        allPosts.map((item) => {
-          return <Post item={item} key={item.id} />;
-        })
+        allPosts.map((item, index) => <Post item={item} index={index} />)
       )}
     </div>
   );

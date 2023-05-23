@@ -1,3 +1,4 @@
+'use client'
 import { PostStore } from "@/stores";
 import {
   Search,
@@ -19,7 +20,6 @@ export function SideBar() {
   const { setFilteredPosts } = PostStore((state) => state);
 
   const user = StorageHelper.getItem("user");
-  console.log(user);
 
   return (
     <div className="fixed pt-24 pb-4 flex flex-col justify-between w-[20%] h-screen bg-white">
@@ -28,7 +28,7 @@ export function SideBar() {
           <Search />
           <input
             placeholder="Search"
-            onChange={({target: {value}}) => setFilteredPosts(value)}
+            onChange={({ target: { value } }) => setFilteredPosts(value)}
             className="ml-2 flex-grow no-underline outline-none no border-2 border-[#EAEAEA] rounded-md py-2 px-4 w-full h-[42px]"
           />
         </div>
