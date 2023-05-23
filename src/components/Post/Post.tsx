@@ -18,7 +18,7 @@ export function Post({ item }: { item: IPost }) {
   const image = !error
     ? item.image
     : `https://api.dicebear.com/6.x/pixel-art/svg?seed=${"asd"}`;
-
+    
   return (
     <Link href={`post/${item.id}`}>
       <div className="flex flex-col border-2 w-[50vw] border-[#EAEAEA] p-[15px] rounded-md gap-2 shadow-lg hover:border-[#c9c9c9] hover:shadow-xl transition-all duration-300 ease-in-out">
@@ -55,7 +55,7 @@ export function Post({ item }: { item: IPost }) {
 
           <div className="flex flex-row p-4 gap-2">
             <Views />
-            <Comments />
+            <Comments comments={0} />
             <Shares />
           </div>
         </div>

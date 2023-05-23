@@ -15,7 +15,9 @@ export function AllPosts() {
       {allPosts.length === 0 ? (
         <PostsShimmer />
       ) : (
-        allPosts.map((item, index) => <Post item={item} key={index} />)
+        allPosts
+          .map((item, index) => <Post item={item} key={index} />)
+          .reverse()
       )}
     </div>
   );

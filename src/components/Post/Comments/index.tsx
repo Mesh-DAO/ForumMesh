@@ -1,9 +1,10 @@
 import { MessageSquare } from "../../Icons/MessageSquare";
+
 type Props = {
-  comments?: string;
+  comments: number;
 };
 
-export function Comments({ comments = "15" }: Props) {
+export function Comments({ comments }: Props) {
   return (
     <span className="flex flex-row items-center gap-1">
       <MessageSquare />

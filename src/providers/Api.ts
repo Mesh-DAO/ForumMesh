@@ -3,7 +3,7 @@ import axios from "axios";
 
 const user = StorageHelper.getItem("user");
 const baseURL =
-  process.env.NEXT_PUBLIC_API_BASE_URL || "https://forum-mesh-backend.onrender.com/api";
+  process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3333/api";
 
 export const Api = axios.create({ baseURL });
 
