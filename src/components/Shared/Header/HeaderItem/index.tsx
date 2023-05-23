@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Title } from "../Title";
+import { Title } from "../../../Title";
 
 type Props = {
     className?: string

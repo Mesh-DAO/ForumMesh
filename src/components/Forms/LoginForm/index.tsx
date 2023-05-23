@@ -4,8 +4,10 @@ import { Input } from "@/components/Input";
 import { Title } from "@/components/Title";
 import { useAuthContext } from "@/contexts";
 import { LoginResolve } from "@/validation/Login";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Controller, useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 
 type ILoginForm = {
   username: string;
@@ -13,6 +15,7 @@ type ILoginForm = {
 };
 
 export function LoginForm() {
+  const { push } = useRouter();
   const { login } = useAuthContext();
   const {
     control,
@@ -23,7 +26,16 @@ export function LoginForm() {
   });
 
   async function onSubmit(values: ILoginForm) {
-    await login(values.username, values.password);
+    try {
+      const { status } = await login(values.username, values.password);
+      if (status === 200) {
+        toast.success("Logged!");
+        return push("/");
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Wrong credentials!");
+    }
   }
 
   return (

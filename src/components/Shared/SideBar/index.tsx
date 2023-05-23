@@ -10,13 +10,16 @@ import {
   Github,
   Instagram,
   Facebook,
-} from "../Icons";
-import { Input } from "../Input";
-import { MenuItem } from "../MenuItem";
-import { Title } from "../Title";
+} from "../../Icons";
+import { MenuItem } from "./MenuItem";
+import { Title } from "../../Title";
+import { StorageHelper } from "@/helpers";
 
 export function SideBar() {
   const { setFilteredPosts } = PostStore((state) => state);
+
+  const user = StorageHelper.getItem("user");
+  console.log(user);
 
   return (
     <div className="fixed pt-24 pb-4 flex flex-col justify-between w-[20%] h-screen bg-white">
@@ -49,23 +52,25 @@ export function SideBar() {
             </MenuItem>
           </div>
 
-          <div className="flex flex-col ">
-            <Title size="sm" color="gray" className="pl-[20%] mb-[10px]">
-              PERSONAL NAVIGATOR
-            </Title>
-            <MenuItem>
-              <HelpCircle />
-              Questions
-            </MenuItem>
-            <MenuItem>
-              <MessageCircle />
-              Answers
-            </MenuItem>
-            <MenuItem>
-              <Heart />
-              Likes & Votes
-            </MenuItem>
-          </div>
+          {user !== undefined && (
+            <div className="flex flex-col ">
+              <Title size="sm" color="gray" className="pl-[20%] mb-[10px]">
+                PERSONAL NAVIGATOR
+              </Title>
+              <MenuItem>
+                <HelpCircle />
+                Questions
+              </MenuItem>
+              <MenuItem>
+                <MessageCircle />
+                Answers
+              </MenuItem>
+              <MenuItem>
+                <Heart />
+                Likes & Votes
+              </MenuItem>
+            </div>
+          )}
         </div>
       </div>
 
@@ -76,4 +81,7 @@ export function SideBar() {
       </div>
     </div>
   );
+}
+function getItem() {
+  throw new Error("Function not implemented.");
 }

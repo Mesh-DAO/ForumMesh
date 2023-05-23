@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
 "use client";
 import React, { useState } from "react";
-import { Comments } from "../Comments";
+import { Comments } from "./Comments";
 import { Dots } from "../Icons";
-import { Shares } from "../Shares";
+import { Shares } from "./Shares";
 import { Tag } from "../Tag";
 import { Title } from "../Title";
-import { Views } from "../Views";
+import { Views } from "./Views";
 import { IPost } from "@/interfaces/IPosts/IPost";
 import { DateHelper } from "@/helpers";
 import Image from "next/image";

@@ -2,10 +2,10 @@ import { CreatePostForm } from '@/components/Forms/CreatePostForm';
 import { RightPanel } from '@/components/RightPanel';
 import { LayoutPage } from '@/components/Shared';
 
-export default function CreatePost() {
+export default function EditPost() {
 	return (
 		<LayoutPage>
-			<main className="flex flex-row gap-8">
+			<main className="flex gap-11 h-screen">
 				<CreatePostForm />
 				<RightPanel />
 			</main>
