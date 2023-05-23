@@ -12,7 +12,7 @@ import { DateHelper } from "@/helpers";
 import Image from "next/image";
 import Link from "next/link";
 
-export function Post({ item, index }: { item: IPost; index: number }) {
+export function Post({ item }: { item: IPost }) {
   const [error, setError] = useState(false);
   const date = DateHelper.toFormat(item.createdAt);
   const image = !error
@@ -20,11 +20,8 @@ export function Post({ item, index }: { item: IPost; index: number }) {
     : `https://api.dicebear.com/6.x/pixel-art/svg?seed=${"asd"}`;
 
   return (
-    <Link href={`post/${item.id}`} key={index}>
-      <div
-        key={index}
-        className="flex flex-col border-2 w-[50vw] border-[#EAEAEA] p-[15px] rounded-md gap-2 shadow-lg hover:border-[#c9c9c9] hover:shadow-xl transition-all duration-300 ease-in-out"
-      >
+    <Link href={`post/${item.id}`}>
+      <div className="flex flex-col border-2 w-[50vw] border-[#EAEAEA] p-[15px] rounded-md gap-2 shadow-lg hover:border-[#c9c9c9] hover:shadow-xl transition-all duration-300 ease-in-out">
         <div className="flex w-full">
           <div className="w-10 h-10 border border-gray-500 rounded-full">
             <Image
