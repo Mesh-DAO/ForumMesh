@@ -6,6 +6,8 @@ export interface PostStore {
   setPost: (post: IPost) => void;
   posts: IPost[];
   setPosts: (post: IPost[]) => void;
+  filteredPosts: IPost[];
+  setFilteredPosts: (title: string) => void;
   getOnePost: (id: string) => Promise<IPost>;
 }
 export const PostStore = create<PostStore>((set, get) => ({
@@ -13,6 +15,12 @@ export const PostStore = create<PostStore>((set, get) => ({
   setPost: (post: IPost) => set(() => ({ post })),
   posts: [],
   setPosts: (posts: IPost[]) => set(() => ({ posts })),
+  filteredPosts: [],
+  setFilteredPosts: (title: string) => {
+    set((state) => ({
+      filteredPosts: state.posts.filter((post) => post.title.includes(title))
+    }));
+  },
   getOnePost: async (id: string) => {
     const { posts } = get();
     const post = posts.filter((item) => item.id === id);

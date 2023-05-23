@@ -9,6 +9,7 @@ export default function Post({ params }: { params: { id: string } }) {
   const { getOnePost, post } = PostStore((state) => state);
   useEffect(() => {
     getOnePost(params.id);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <LayoutPage>

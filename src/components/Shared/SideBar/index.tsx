@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { PostStore } from "@/stores";
 import {
   Search,
   List,
@@ -11,12 +11,13 @@ import {
   Instagram,
   Facebook,
 } from "../../Icons";
-import { Input } from "../../Input";
 import { MenuItem } from "./MenuItem";
 import { Title } from "../../Title";
 import { StorageHelper } from "@/helpers";
 
 export function SideBar() {
+  const { setFilteredPosts } = PostStore((state) => state);
+
   const user = StorageHelper.getItem("user");
   console.log(user);
 
@@ -25,7 +26,11 @@ export function SideBar() {
       <div className="flex flex-col w-full gap-4">
         <div className="flex items-center mb-5 pl-[10%]">
           <Search />
-          <Input placeHolder="Search" className="ml-2 flex-grow" />
+          <input
+            placeholder="Search"
+            onChange={({target: {value}}) => setFilteredPosts(value)}
+            className="ml-2 flex-grow no-underline outline-none no border-2 border-[#EAEAEA] rounded-md py-2 px-4 w-full h-[42px]"
+          />
         </div>
 
         <div className="flex flex-col gap-6 w-[60%]">

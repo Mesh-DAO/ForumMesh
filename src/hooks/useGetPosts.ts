@@ -4,7 +4,7 @@ import { PostStore } from "@/stores";
 import { useEffect, useTransition } from "react";
 
 export function useGetPosts() {
-  const { posts, setPosts } = PostStore((state) => state);
+  const { posts, setPosts, filteredPosts } = PostStore((state) => state);
   const [isPending, startTransition] = useTransition();
   useEffect(() => {
     startTransition(() => {
@@ -13,5 +13,5 @@ export function useGetPosts() {
         .catch((err) => console.error(err));
     });
   }, []);
-  return { posts, isPending };
+  return { posts, isPending, filteredPosts };
 }

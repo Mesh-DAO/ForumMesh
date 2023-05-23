@@ -5,15 +5,18 @@ import { PostsShimmer } from "../Shared/Shimmer/PostsShimmer";
 import { TagFiltersForm } from "../Forms/TagFiltersForm";
 
 export function AllPosts() {
-  const { posts } = useGetPosts();
+  const { posts, filteredPosts } = useGetPosts();
+
+  const allPosts = filteredPosts.length > 0 ? filteredPosts : posts
 
   return (
     <div className="flex flex-col gap-8 h-full mt-32 w-[65%]">
       <TagFiltersForm />
-      {posts.length === 0 ? (
+      {allPosts.length === 0 ? (
+
         <PostsShimmer />
       ) : (
-        posts.map((item) => {
+        allPosts.map((item) => {
           return <Post item={item} key={item.id} />;
         })
       )}
