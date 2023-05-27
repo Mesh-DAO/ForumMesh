@@ -6,10 +6,12 @@ type Props = {
   color?: string;
   className?: string;
   bold?: number;
+  onClick?: () => void;
 };
 
 export function Title({
   children,
+  onClick,
   size = "md",
   color = "black",
   className,
@@ -17,8 +19,12 @@ export function Title({
 }: Props) {
   return (
     <h1
+      onClick={onClick}
       className={classNames(
-        `${className} font-Roboto flex items-center gap-2`,
+        `${className} font-Roboto flex items-center gap-2 transition-all duration-300 ease-in-out`,
+        {
+          "text-xs": size === "xs",
+        },
         {
           "text-md": size === "md",
         },
@@ -48,6 +54,9 @@ export function Title({
         },
         {
           "text-white": color === "white",
+        },
+        {
+          "text-brand-red": color === "red",
         }
       )}
     >

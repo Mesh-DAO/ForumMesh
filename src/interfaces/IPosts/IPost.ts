@@ -6,6 +6,8 @@ export interface IPost {
   message: string;
   type: string;
   image: string;
+  numberComments: number;
+  numberVotes: number;
   createdAt: string;
   updatedAt?: string;
 }

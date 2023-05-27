@@ -1,6 +1,6 @@
 import { VoteService } from "@/services/VoteService";
 import { VoteStore } from "@/stores";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import toast from "react-hot-toast";
 
 export function useCreateVote(id: string) {

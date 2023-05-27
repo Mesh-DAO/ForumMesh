@@ -1,6 +1,8 @@
-export function Dots() {
+export function Dots({ onClick, className }: any) {
   return (
     <svg
+      className={`${className} bg-[rgba(0,0,0,.1)] hover:bg-[rgba(0,0,0,.2)] rounded transition-all duration-300 ease-in-out`}
+      onClick={onClick}
       width="24"
       height="25"
       viewBox="0 0 24 25"
