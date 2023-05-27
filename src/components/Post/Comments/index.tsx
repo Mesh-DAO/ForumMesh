@@ -22,7 +22,10 @@ export function Comments({ isOpen, id }: { isOpen: boolean; id: string }) {
             </Title>
             <CreateComment id={id} />
             <div className="grid grid-cols-1 gap-4 mt-4">
-              {comments.slice(0, 3).map((item) => <Comment item={item} />).reverse()}
+              {comments
+                .slice(0, 3)
+                .map((item, index) => <Comment item={item} key={index} />)
+                .reverse()}
             </div>
           </motion.div>
         )}

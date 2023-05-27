@@ -11,7 +11,9 @@ import { useCreateVote } from "@/hooks";
 import { PostShimmer } from "../Shared/Shimmer/PostShimmer";
 import { Card } from "../Card";
 
-export function SeePost({ post }: { post?: IPost }) {
+export function SeePost({ post }: { post: IPost }) {
+  const { votes } = useGetVotesByPost(post.id);
+  const { createVote } = useCreateVote(post.id);
   if (!post) {
     return (
       <Card className="mt-32 w-[65%] p-4">
@@ -19,8 +21,6 @@ export function SeePost({ post }: { post?: IPost }) {
       </Card>
     );
   }
-  const { votes } = useGetVotesByPost(post.id);
-  const { createVote } = useCreateVote(post.id);
   const user = StorageHelper.getItem("user");
   const userVoted = votes.filter(
     (item) => item.userId === user.id && item.postId === post?.id
