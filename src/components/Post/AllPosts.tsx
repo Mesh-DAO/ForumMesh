@@ -10,7 +10,7 @@ export function AllPosts() {
   const allPosts = filteredPosts.length > 0 ? filteredPosts : posts;
 
   return (
-    <div className="flex flex-col gap-8 h-full my-32 w-[65%]">
+    <div className="flex flex-col gap-8 h-full mt-32 w-[65%]">
       <TagFiltersForm />
       {allPosts.length === 0 ? (
         <PostsShimmer />

@@ -1,14 +1,14 @@
 import { ArrowUp } from "../../Icons/ArrowUp";
 
 type Props = {
-  votes: number;
+  shares?: string;
 };
 
-export function Votes({ votes }: Props) {
+export function Shares({ shares = "155" }: Props) {
   return (
     <span className="flex flex-row items-center gap-1">
       <ArrowUp />
-      {votes}
+      {shares}
     </span>
   );
 }
