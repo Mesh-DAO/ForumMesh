@@ -4,10 +4,18 @@ import { Comment } from "./Comment";
 import { Title } from "@/components/Title";
 import { CreateComment } from "./CreateComments";
 
-export function Comments({ isOpen, id }: { isOpen: boolean; id: string }) {
+export function Comments({
+  isOpen,
+  id,
+  slice = 3,
+}: {
+  isOpen: boolean;
+  id: string;
+  slice?: number;
+}) {
   const { comments } = CommentStore();
 
-  if (comments.length > 0 && comments[0].postId === id) {
+  if (comments[0]?.postId === id) {
     return (
       <AnimatePresence>
         {isOpen && (
@@ -23,7 +31,7 @@ export function Comments({ isOpen, id }: { isOpen: boolean; id: string }) {
             <CreateComment id={id} />
             <div className="grid grid-cols-1 gap-4 mt-4">
               {comments
-                .slice(0, 3)
+                .slice(0, slice)
                 .map((item, index) => <Comment item={item} key={index} />)
                 .reverse()}
             </div>
@@ -32,6 +40,6 @@ export function Comments({ isOpen, id }: { isOpen: boolean; id: string }) {
       </AnimatePresence>
     );
   } else {
-    return null;
+    return <>{isOpen && <CreateComment id={id} />}</>;
   }
 }

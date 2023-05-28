@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 
 export function useCreateVote(id: string) {
   const { votes, setVotes } = VoteStore((state) => state);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   async function createVote() {
     try {
       const { status, data } = await VoteService.create(id);
