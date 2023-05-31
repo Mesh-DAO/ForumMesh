@@ -7,9 +7,16 @@ type Props = {
   value?: string;
   children: React.ReactNode;
   onChange: ChangeEventHandler<HTMLInputElement>;
+  defaultValue?: string;
 };
 
-export function InputFile({ className, children, onChange, ...props }: Props) {
+export function InputFile({
+  className,
+  children,
+  onChange,
+  defaultValue,
+  ...props
+}: Props) {
   return (
     <label
       className={classNames(
@@ -20,6 +27,7 @@ export function InputFile({ className, children, onChange, ...props }: Props) {
       {children}
       <input
         {...props}
+        defaultValue={defaultValue}
         onChange={onChange}
         type="file"
         className="opacity-0 absolute z-[-1]"

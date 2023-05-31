@@ -18,7 +18,7 @@ function findOne(id: string) {
 }
 
 function updateOne(id: string, data: { message: string; post: string }) {
-  return Api.put<IComment>(`/v1/comment/${id}`, data);
+  return Api.patch<IComment>(`/v1/comment/${id}`, data);
 }
 
 function deleteOne(id: string) {

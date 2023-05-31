@@ -1,7 +1,7 @@
 export interface IPost {
   id: string;
   title: string;
-  creatorId: string;
+  userId: string;
   creatorName: string;
   message: string;
   type: string;

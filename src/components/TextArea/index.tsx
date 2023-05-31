@@ -8,10 +8,12 @@ type Props = {
   onChange?: (event: ChangeEvent<HTMLTextAreaElement>) => void;
   cols?: number;
   rows?: number;
+  defaultValue?: string;
 };
 
 export function TextArea({
   className,
+  defaultValue,
   placeHolder,
   onChange,
   cols,
@@ -21,6 +23,7 @@ export function TextArea({
   return (
     <textarea
       {...props}
+      defaultValue={defaultValue}
       cols={cols}
       rows={rows}
       onChange={onChange}

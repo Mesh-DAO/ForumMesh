@@ -14,7 +14,7 @@ function findOne(id: string) {
 }
 
 function updateOne(id: string, data: IPostPayload) {
-  return Api.put<IPost>(`/v1/post/${id}`, data);
+  return Api.patch<IPost>(`/v1/post/${id}`, data);
 }
 
 function deleteOne(id: string) {

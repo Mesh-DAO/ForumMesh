@@ -41,16 +41,13 @@ export function Post({ item }: { item: IPost }) {
                 alt="fotoperfil"
               />
             </div>
-            <div className="flex items-center justify-between w-full">
-              <div className="pl-2">
-                <Title bold={500} size="lg">
-                  @{item.creatorName.toLowerCase()}
-                </Title>
-                <Title bold={400} size="xs">
-                  {date}
-                </Title>
-              </div>
-              <Dots />
+            <div className="flex flex-col w-full pl-2">
+              <Title bold={500} size="lg">
+                @{item.creatorName.toLowerCase()}
+              </Title>
+              <Title bold={400} size="xs">
+                {date}
+              </Title>
             </div>
           </div>
           <div className="flex flex-col gap-2 mt-4">

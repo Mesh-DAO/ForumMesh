@@ -8,12 +8,20 @@ type Props = {
   options: Array<string>;
   value?: string;
   onChange?: (event: ChangeEvent<HTMLSelectElement>) => void;
+  defaultValue?: string;
 };
 
-export function Select({ options, className, onChange, ...props }: Props) {
+export function Select({
+  options,
+  className,
+  onChange,
+  defaultValue,
+  ...props
+}: Props) {
   return (
     <select
       {...props}
+      defaultValue={defaultValue}
       onChange={onChange}
       className={classNames(
         "form-select no-underline outline-none bg-white border-2 border-[#EAEAEA] rounded-md py-2 px-4 w-full h-[42px]",
