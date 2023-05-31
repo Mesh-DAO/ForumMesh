@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { VoteService } from "@/services/VoteService";
 import { VoteStore } from "@/stores";
 import { useEffect, useState } from "react";
@@ -13,6 +12,6 @@ export function useGetVotesByPost(id: string) {
         setLoading(false);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [id, setVotes]);
   return { votes, loading };
 }

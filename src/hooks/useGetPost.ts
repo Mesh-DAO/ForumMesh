@@ -11,6 +11,6 @@ export function useGetPost(id: string) {
         .then(({ data }) => setPost(data))
         .catch((err) => console.error(err));
     });
-  }, []);
+  }, [id, setPost]);
   return { post, isPending };
 }

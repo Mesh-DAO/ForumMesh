@@ -23,6 +23,15 @@ export function UpdatePostForm({ postId }: { postId: string }) {
     resolver: PostResolve,
   });
 
+  useEffect(() => {
+    async function fetchData() {
+      if (!postId) return;
+      const { status, data } = await PostService.findOne(postId);
+      if (status === 200) setData(data);
+    }
+    fetchData();
+  }, [postId]);
+
   async function onSubmit(values: IPostPayload) {
     try {
       if (!postId) return;
@@ -34,15 +43,6 @@ export function UpdatePostForm({ postId }: { postId: string }) {
       console.error(error);
     }
   }
-
-  useEffect(() => {
-    async function fetchData() {
-      if (!postId) return;
-      const { status, data } = await PostService.findOne(postId);
-      if (status === 200) setData(data);
-    }
-    fetchData();
-  }, []);
 
   return (
     <form

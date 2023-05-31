@@ -20,21 +20,19 @@ import toast from "react-hot-toast";
 
 export function SeePost({ post }: { post: IPost }) {
   const { push } = useRouter();
-  const user = StorageHelper.getItem("user");
-  if (!user)
-    return (
-      <Title bold={500} size="lg" className="w-[65%] text-center mt-32">
-        Não logado!
-      </Title>
-    );
   const { votes } = useGetVotesByPost(post.id);
   const { createVote, loading } = useCreateVote(post.id);
   const { getComments } = useGetCommentsByPost();
   const [openOptions, setOpenOptions] = useState(false);
-  const userOwner = post.userId === user.id;
   const userVoted = votes.filter(
     (item) => item.userId === user.id && item.postId === post?.id
   );
+  const user = StorageHelper.getItem("user");
+  const userOwner = post.userId === user?.id;
+
+  useEffect(() => {
+    getComments(post.id);
+  }, [getComments, post.id]);
 
   async function DeletePost() {
     try {
@@ -49,9 +47,13 @@ export function SeePost({ post }: { post: IPost }) {
     }
   }
 
-  useEffect(() => {
-    getComments(post.id);
-  }, []);
+  if (!user) {
+    return (
+      <Title bold={500} size="lg" className="w-[65%] text-center mt-32">
+        Não logado!
+      </Title>
+    );
+  }
 
   if (!post) {
     return (
