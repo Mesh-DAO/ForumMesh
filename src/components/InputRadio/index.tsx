@@ -5,12 +5,19 @@ interface Props {
   children: React.ReactNode;
   className?: string;
   defaultChecked?: boolean;
+  onChange: () => void;
 }
 
-export function InputRadio({ children, className, defaultChecked }: Props) {
+export function InputRadio({
+  children,
+  className,
+  defaultChecked,
+  onChange,
+}: Props) {
   return (
     <label className="relative">
       <input
+        onChange={onChange}
         type="radio"
         name="tag"
         defaultChecked={defaultChecked}

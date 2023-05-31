@@ -1,10 +1,9 @@
-'use client'
+"use client";
 import { PostStore } from "@/stores";
 import {
   Search,
   List,
   Tag,
-  Award,
   HelpCircle,
   MessageCircle,
   Heart,
@@ -15,11 +14,13 @@ import {
 import { MenuItem } from "./MenuItem";
 import { Title } from "../../Title";
 import { StorageHelper } from "@/helpers";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function SideBar() {
   const { setFilteredPosts } = PostStore((state) => state);
-
   const user = StorageHelper.getItem("user");
+  const pathname = usePathname();
 
   return (
     <div className="fixed pt-24 pb-4 flex flex-col justify-between w-[20%] h-screen bg-white">
@@ -38,34 +39,34 @@ export function SideBar() {
             <Title size="sm" color="gray" className="pl-[20%] mb-[10px]">
               MENU
             </Title>
-            <MenuItem>
-              <List />
-              Questions
-            </MenuItem>
-            <MenuItem>
-              <Tag />
-              Tags
-            </MenuItem>
-            <MenuItem>
-              <Award />
-              Ranking
-            </MenuItem>
+            <Link href={"/"}>
+              <MenuItem active={pathname === "/"}>
+                <List />
+                Questions
+              </MenuItem>
+            </Link>
+            <Link href={"/tags"}>
+              <MenuItem active={pathname === "/tags"}>
+                <Tag />
+                Tags
+              </MenuItem>
+            </Link>
           </div>
 
-          {user !== undefined && (
-            <div className="flex flex-col ">
+          {user && (
+            <div className="flex flex-col">
               <Title size="sm" color="gray" className="pl-[20%] mb-[10px]">
                 PERSONAL NAVIGATOR
               </Title>
-              <MenuItem>
+              <MenuItem active={pathname === "/profile?se=questions"}>
                 <HelpCircle />
                 Questions
               </MenuItem>
-              <MenuItem>
+              <MenuItem active={pathname === "/profile?se=answers"}>
                 <MessageCircle />
                 Answers
               </MenuItem>
-              <MenuItem>
+              <MenuItem active={pathname === "/profile?se=likes"}>
                 <Heart />
                 Likes & Votes
               </MenuItem>
@@ -75,7 +76,9 @@ export function SideBar() {
       </div>
 
       <div className="flex flex-row gap-3 items-center justify-center">
-        <Github />
+        <Link href={"https://github.com/Mesh-DAO/ForumMesh"}>
+          <Github />
+        </Link>
         <Instagram />
         <Facebook />
       </div>

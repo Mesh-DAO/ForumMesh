@@ -44,7 +44,7 @@ export function Post({ item }: { item: IPost }) {
             <div className="flex items-center justify-between w-full">
               <div className="pl-2">
                 <Title bold={500} size="lg">
-                  @{item.creatorName}
+                  @{item.creatorName.toLowerCase()}
                 </Title>
                 <Title bold={400} size="xs">
                   {date}
@@ -98,7 +98,7 @@ export function Post({ item }: { item: IPost }) {
           )}
         </div>
       </div>
-      <Comments isOpen={showComments} id={item.id} />
+      <Comments isOpen={showComments && myPost} id={item.id} />
     </>
   );
 }

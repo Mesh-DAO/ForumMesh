@@ -19,7 +19,7 @@ export default function RootLayout({
       <body>
         <Suspense fallback={<Loading />}>
           <AppContexts>
-            <Toaster position="top-center" />
+            <Toaster position="bottom-right" />
             <GlobalModals />
             {children}
           </AppContexts>

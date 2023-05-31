@@ -15,6 +15,12 @@ import { useEffect } from "react";
 
 export function SeePost({ post }: { post: IPost }) {
   const user = StorageHelper.getItem("user");
+  if (!user)
+    return (
+      <Title bold={500} size="lg" className="w-[65%] text-center mt-32">
+        Não logado!
+      </Title>
+    );
   const { votes } = useGetVotesByPost(post.id);
   const { createVote, loading } = useCreateVote(post.id);
   const { getComments } = useGetCommentsByPost();
@@ -50,7 +56,7 @@ export function SeePost({ post }: { post: IPost }) {
           </div>
           <div className="flex justify-between w-full">
             <div className="pl-[2%]">
-              <Title bold={700}>{post?.creatorName}</Title>
+              <Title bold={700}>{post?.creatorName.toLowerCase()}</Title>
               <small>{DateHelper.toFormat(post?.createdAt)}</small>
             </div>
             <Dots />

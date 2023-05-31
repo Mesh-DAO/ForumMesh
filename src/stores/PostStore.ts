@@ -9,22 +9,26 @@ export interface PostStore {
   filteredPosts: IPost[];
   setFilteredPosts: (title: string) => void;
   getOnePost: (id: string) => Promise<IPost>;
+  selectedTag: string;
+  setSelectedTag: (selectedTag: string) => void;
 }
 export const PostStore = create<PostStore>((set, get) => ({
   post: undefined,
-  setPost: (post: IPost) => set(() => ({ post })),
+  setPost: (post) => set(() => ({ post })),
   posts: [],
-  setPosts: (posts: IPost[]) => set(() => ({ posts })),
+  setPosts: (posts) => set(() => ({ posts })),
   filteredPosts: [],
-  setFilteredPosts: (title: string) => {
+  setFilteredPosts: (title) => {
     set((state) => ({
-      filteredPosts: state.posts.filter((post) => post.title.includes(title))
+      filteredPosts: state.posts.filter((post) => post.title.includes(title)),
     }));
   },
-  getOnePost: async (id: string) => {
+  getOnePost: async (id) => {
     const { posts } = get();
     const post = posts.filter((item) => item.id === id);
     set(() => ({ post: post[0] }));
     return post[0];
   },
+  selectedTag: "new",
+  setSelectedTag: (selectedTag) => set(() => ({ selectedTag })),
 }));
